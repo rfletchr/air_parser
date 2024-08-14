@@ -1,4 +1,6 @@
 # AIR Parser
+![tests](https://github.com/rfletchr/air_parser/actions/workflows/tests.yml/badge.svg)
+
 A Go parser for [Civitai AIR](https://developer.civitai.com/docs/getting-started/ai-resource-identifier) URNs.
 
 e.g. 
