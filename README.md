@@ -1,9 +1,10 @@
 # AIR Parser
-===
-## Description
 A Go parser for [Civitai AIR](https://developer.civitai.com/docs/getting-started/ai-resource-identifier) URNs.
 
-e.g. urn:air:sd1:model:civitai:2421@43533
+e.g. 
+```
+urn:air:sd1:model:civitai:2421@43533
+```
 
 
 ## Usage 
