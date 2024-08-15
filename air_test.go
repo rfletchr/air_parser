@@ -69,8 +69,14 @@ func TestValidAirValues(t *testing.T) {
 		if err != nil {
 			panic(err)
 		}
+
 		if *parsedResult != expectedResult {
 			t.Fatalf("expected: %v got: %v", expectedResult, parsedResult)
 		}
+
+		if parsedResult.Urn() != urn {
+			t.Fatalf("urn mismatch. expect: '%s' got '%s'", urn, parsedResult.Urn())
+		}
+
 	}
 }

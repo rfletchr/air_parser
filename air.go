@@ -16,6 +16,35 @@ type Air struct {
 	Version   string
 	Layer     string
 	Format    string
+	urn       string
+}
+
+// Get the AIR URN that this struct represents.
+func (a *Air) Urn() string {
+	if a.urn != "" {
+		return a.urn
+	}
+
+	var builder strings.Builder
+	builder.WriteString(fmt.Sprintf("urn:air:%s:%s:%s:%s", a.Ecosystem, a.Type, a.Source, a.Id))
+
+	if a.Version != "" {
+		builder.WriteByte('@')
+		builder.WriteString(a.Version)
+	}
+
+	if a.Layer != "" {
+		builder.WriteByte(':')
+		builder.WriteString(a.Layer)
+	}
+
+	if a.Format != "" {
+		builder.WriteByte('.')
+		builder.WriteString(a.Format)
+	}
+
+	a.urn = builder.String()
+	return a.urn
 }
 
 // Create a new AirResource from a string e.g. urn:air:sd1:model:civitai:2421@43533
